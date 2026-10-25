@@ -1,0 +1,28 @@
+[Unit]
+Description=EC26E physical button task dispatcher
+After=default.target
+ConditionPathExists=/dev/gpiochip0
+ConditionPathExists=/dev/gpiochip1
+StartLimitIntervalSec=60
+StartLimitBurst=10
+
+[Service]
+Type=notify
+NotifyAccess=main
+WorkingDirectory=/home/radxa/repositories/ec_26_e
+Environment=PYTHONUNBUFFERED=1
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/radxa/.Xauthority
+ExecStart=/home/radxa/.cache/pypoetry/virtualenvs/ec-26-e-Y3NiaORr-py3.10/bin/python -m ec_26_e --button-service --active-config /home/radxa/.local/share/ec26e-calibration/active --task1-button-chip /dev/gpiochip0 --task1-button-line 38 --task2-button-chip /dev/gpiochip1 --task2-button-line 36 --button-retry-window 120 --button-status %t/ec26e/buttons-status.json
+Restart=always
+RestartSec=2
+WatchdogSec=15
+TimeoutStopSec=30
+KillMode=mixed
+RuntimeDirectory=ec26e
+RuntimeDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target

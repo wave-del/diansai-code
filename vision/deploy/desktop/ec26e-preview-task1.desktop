@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=EC26E 预览 Task1
+Comment=使用当前生效配置快速预览 Task1，不保存录像
+Exec=/home/radxa/repositories/ec_26_e/tools/calibration/launch.sh --preview-task task1
+Icon=camera-video
+Terminal=false
+StartupNotify=true
+Categories=Utility;

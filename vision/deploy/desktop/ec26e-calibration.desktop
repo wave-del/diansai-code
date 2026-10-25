@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=EC26E 现场标定
+Comment=编辑、校验、应用和恢复 EC26E 现场配置
+Exec=/home/radxa/repositories/ec_26_e/tools/calibration/launch.sh
+Icon=preferences-system
+Terminal=false
+StartupNotify=true
+Categories=Utility;

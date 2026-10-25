@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+
+# 测试、覆盖率与工具缓存
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.ipynb_checkpoints/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+.runtime/
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.swp
+*.swo
+*~
+/tmp/
+*.log
+*.coverage
+*.prof
+
+# 本地 CMake 编译产物
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+
+reference-foc/
+reference-*/
+doc/
+outputs/
+model-lib/
+
+# 现场设置：相机/串口路径与调参值每台机器不同，复制 .example 后修改
+host/ui_settings.json

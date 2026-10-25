@@ -1,0 +1,48 @@
+{
+  "schema_version": 3,
+  "task": {
+    "minimum_stable_frames": 5,
+    "piece_vertex_tolerance_mm": 2.0,
+    "workspace_corner_x_tolerance_mm": 2.0,
+    "workspace_corner_y_tolerance_mm": 2.0,
+    "workspace_corner_distance_tolerance_mm": 2.5,
+    "acquisition_timeout_seconds": 5.0,
+    "frame_read_timeout_seconds": 2.0,
+    "landscape_rotation": "counterclockwise"
+  },
+  "resize": {
+    "min_workspace_ratio": 0.25,
+    "reference_corners_relative": [
+      [0.1375, 0.065],
+      [0.778, 0.078],
+      [0.771, 0.87],
+      [0.1375, 0.844]
+    ],
+    "search_band_ratio": 0.14
+  },
+  "detect1": {
+    "piece_mode": 2,
+    "workspace_erode_ratio": 0.007,
+    "min_piece_area_ratio": 0.004,
+    "max_piece_area_ratio": 0.2,
+    "polygon_epsilon_ratio": 0.018,
+    "short_edge_merge_mm": 8.0,
+    "minimum_physical_edge_mm": 8.0,
+    "minimum_corner_turn_deg": 12.0,
+    "minimum_corner_depth_mm": 4.0,
+    "minimum_polygon_iou": 0.85,
+    "min_vertices": 3,
+    "max_vertices": 6,
+    "max_pieces": 12
+  },
+  "planning": {
+    "mode": "fixed",
+    "noise_bound_mm": 2.0,
+    "search_top_n": 100,
+    "minimum_execution_confidence": 0.0,
+    "start_xy_a4_mm": [
+      10.0,
+      10.0
+    ]
+  }
+}

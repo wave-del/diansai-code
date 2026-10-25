@@ -1,0 +1,47 @@
+EC26E 拼图装置 完整运行包
+============================
+
+来源仓库: ec26e-tangram-puzzle
+来源分支: main
+来源提交: 3ecaa30dd4c2fc496b136f3e1457f49d2fc344c2
+打包日期: 2026-10-20
+
+基础内容
+--------
+git archive 导出的版本库跟踪文件（425 个），不含 .git 历史、__pycache__、
+.pytest_cache 与运行输出。
+
+额外包含（未纳入版本控制、运行视觉所必需）
+------------------------------------------
+model-lib/
+  puzzle_seg_yolo11n_640_pcq_a733.nb   YOLO11-seg NPU 模型
+  libyolo11_seg_npu.so                 原生前后处理推理库
+  libNBGlinker.so                      VeriSilicon VIPLite 运行库
+  libVIPhal.so                         VeriSilicon VIPLite 运行库
+vision/model-bin/puzzle_seg_yolo11n_640_pcq_a733.nb
+vision/native/yolo11_seg_npu/build/libyolo11_seg_npu.so
+host/ui_settings.json                  现场相机/串口配置副本；换机后请按实际设备修改
+
+SHA-256
+-------
+82f049b0ed0065dd4d443e37eeb1edfcbef24457c9c24e36170d64d5b748ca66  model-lib/libNBGlinker.so
+3ed5357b26bd6c4fb68fbdc0b21d637227dda711d1fe67b9e28accdc48bb11f2  model-lib/libVIPhal.so
+ada17642bcd982ff210f77e274e0435900048ca9ea9daf366f2c08e718085ad0  model-lib/libyolo11_seg_npu.so
+e0f9b085af2baad0a895a75a714413ca661ebc002d546e45fc8438a84f8ed9eb  model-lib/puzzle_seg_yolo11n_640_pcq_a733.nb
+e0f9b085af2baad0a895a75a714413ca661ebc002d546e45fc8438a84f8ed9eb  vision/model-bin/puzzle_seg_yolo11n_640_pcq_a733.nb
+ada17642bcd982ff210f77e274e0435900048ca9ea9daf366f2c08e718085ad0  vision/native/yolo11_seg_npu/build/libyolo11_seg_npu.so
+da18dfa55490e5cc133e6bd2f2da92b0742f816398ba685c39be0ff8387a7eb5  host/ui_settings.json
+
+快速开始
+--------
+python3 -m venv .venv
+.venv/bin/pip install -r handover-puzzle/requirements.txt
+host/start_host.sh
+
+说明
+----
+- 模型和原生库仅适用于 ARM aarch64 / A733 VIPLite 平台。
+- host/start_host.sh 会把 model-lib/ 加入 LD_LIBRARY_PATH。单独运行 vision/ 工程时，
+  如系统未预装 libNBGlinker.so / libVIPhal.so，请把本包的 model-lib/ 加入 LD_LIBRARY_PATH。
+- 首次上电需先人工把机构放到机械限位角，再建立原点。
+- 视觉模型与厂商运行库不随上游 Git 仓库分发，本包为内部交接用途。

@@ -1,0 +1,15 @@
+# Python runtime products
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Interactive workbench diagnostics; retained locally, never source-controlled.
+reports/
+
+# Local environments and editor state
+.venv/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

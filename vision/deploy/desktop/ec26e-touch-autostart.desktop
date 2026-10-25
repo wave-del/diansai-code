@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=EC26E 触摸启动台
+Comment=登录后打开适合触摸操作的 EC26E 现场标定与视觉预览入口
+Exec=/home/radxa/repositories/ec_26_e/tools/calibration/launch.sh
+Icon=preferences-system
+Terminal=false
+StartupNotify=true
+OnlyShowIn=KDE;
+X-KDE-autostart-after=panel
+X-KDE-StartupNotify=true
+X-GNOME-Autostart-enabled=true
+

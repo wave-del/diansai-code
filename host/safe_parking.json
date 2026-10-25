@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "name": "camera_clear_safe_parking",
+  "description": "视觉采集与任务结束使用的安全停靠点。蓝纸原点为右上角；Y=-1 mm 表示从纸张右边向外退 1 mm。",
+  "blue_paper_xy_mm": [0.0, -1.0],
+  "repeat_departure_xy_mm": [0.0, 20.0],
+  "safe_lift_mm": 10.0,
+  "xy_feed_mm_min": 1200.0
+}

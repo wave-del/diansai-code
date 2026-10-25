@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "vision_clockwise_to_motor_sign": 1,
+  "probe_degrees": 30.0
+}

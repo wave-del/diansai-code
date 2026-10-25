@@ -1,0 +1,20 @@
+{
+  "params": "new",
+  "preview_a4_profile": "adaptive",
+  "process_fps": 6.0,
+  "acquisition_timeout": 5.0,
+  "travel_lift": 10.0,
+  "pickup_lift": 0.5,
+  "place_lift": 2.0,
+  "rest_lift": 10.0,
+  "continuous": true,
+  "xy_feed_mm_min": 4200.0,
+  "z_feed_mm_min": 1500.0,
+  "rotation_rpm": 29,
+  "magnet_pickup_dwell_seconds": 0.2,
+  "magnet_release_dwell_seconds": 0.5,
+  "max_moves": 4,
+  "plan_only": true,
+  "camera_path": "",
+  "writer_port": ""
+}
