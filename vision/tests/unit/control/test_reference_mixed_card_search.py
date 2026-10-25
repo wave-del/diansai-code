@@ -6,8 +6,8 @@ import pytest
 import numpy as np
 from shapely.geometry import Polygon
 
-from ec_26_e.control import PuzzlePiece, PlanningOptions, plan_sheet_moves
-from ec_26_e.control._engine.solver import search
+from solver2 import PuzzlePiece, PlanningOptions, plan_sheet_moves
+from solver2._engine.solver import search
 
 
 @pytest.mark.parametrize('index', [0, 3, 25])
@@ -28,7 +28,7 @@ def test_mixed_real_cards_validate_before_expensive_partial_search(index, monkey
 
 
 def test_empty_strict_probe_resumes_general_topology_search(monkeypatch):
-    from ec_26_e.control._engine.solver.preprocess import preprocess_observations
+    from solver2._engine.solver.preprocess import preprocess_observations
     row = json.loads((Path(__file__).parents[2] / 'fixtures/poker_mixed_30.json').read_text())['observations'][0]
     pieces = preprocess_observations(dict(schema_version='1.0', pieces=row['pieces']))
     phases = []
@@ -42,7 +42,7 @@ def test_empty_strict_probe_resumes_general_topology_search(monkeypatch):
 
 
 def test_vectorized_bounding_rectangle_matches_exact_geometry():
-    from ec_26_e.control._engine.solver.partition_search import _minimum_rectangle_sides
+    from solver2._engine.solver.partition_search import _minimum_rectangle_sides
     rng = np.random.default_rng(2210)
     for _ in range(200):
         hull = Polygon(rng.normal(size=(15, 2))*40 + rng.uniform(-1e4, 1e4, (1,2))).convex_hull

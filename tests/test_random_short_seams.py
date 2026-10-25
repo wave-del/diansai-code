@@ -10,10 +10,10 @@ from shapely.geometry import Polygon
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT/'vision/src'), str(ROOT/'handover-puzzle')]
 
-from ec_26_e.control import PuzzlePiece
-from ec_26_e.control._engine.solver import search, solve
-from ec_26_e.control._engine.solver.partition_search import _turn_residual
-from ec_26_e.control._engine.transforms import rotation_matrix, transform_points
+from solver2 import PuzzlePiece
+from solver2._engine.solver import search, solve
+from solver2._engine.solver.partition_search import _turn_residual
+from solver2._engine.transforms import rotation_matrix, transform_points
 from random_white_solver_adapter import solve_random_white
 
 
@@ -33,8 +33,8 @@ def test_actual_polyline_corner_outside_observation_error_remains_incompatible()
 
 
 def test_refinement_cannot_accept_an_infeasible_gap_and_endpoint_limit():
-    from ec_26_e.control._engine.solver.random_clearance import plan_random_clearance
-    from ec_26_e.control._engine.solver.random_safety import reconstruct_random_topology
+    from solver2._engine.solver.random_clearance import plan_random_clearance
+    from solver2._engine.solver.random_safety import reconstruct_random_topology
     vertices={'left':np.array([[0,0],[50,0],[50,60],[0,60]],float),
               'right':np.array([[50,0],[100,0],[100,60],[50,60]],float)}
     topology=reconstruct_random_topology(vertices,tolerance_mm=1.)
@@ -47,7 +47,7 @@ def test_refinement_cannot_accept_an_infeasible_gap_and_endpoint_limit():
 
 
 def test_repairable_high_fill_proposal_outranks_layout_below_output_gate():
-    from ec_26_e.control._engine.solver.exact_candidate_scoring import exact_geometry_objective
+    from solver2._engine.solver.exact_candidate_scoring import exact_geometry_objective
     def metrics(iou,overlap):
         return dict(rectangle_legal=True,connected_with_tolerance_10mm=True,
                     target_area_mm2=10000.,iou=iou,overlap_area_mm2=overlap,

@@ -18,7 +18,7 @@ from ec_26_e.config import (
     load_task2_config,
 )
 from ec_26_e.actuation import ActuationError
-from ec_26_e.control import PlanningError
+from solver2 import PlanningError
 from ec_26_e.draw import DrawError
 from ec_26_e.tasks.contracts import TaskCancelledError, TaskContext
 from ec_26_e.tasks.task1 import Task1Error

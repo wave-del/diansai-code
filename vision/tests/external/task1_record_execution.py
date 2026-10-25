@@ -27,7 +27,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from ec_26_e.actuation import ActuationConfig
 from ec_26_e.cam import CameraConfig, CameraSource, FFmpegCamera
 from ec_26_e.config import load_env_file, load_task1_config
-from ec_26_e.control import MovePlan
+from solver2 import MovePlan
 from ec_26_e.tasks.task1.actuation import MovePlanActuator
 from ec_26_e.tasks.task1.application import _default_actuator_factory
 from ec_26_e.tasks.task1.runner import run_task1

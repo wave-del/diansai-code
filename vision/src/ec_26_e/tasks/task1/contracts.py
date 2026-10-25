@@ -11,7 +11,7 @@ import numpy as np
 
 from ec_26_e.actuation import ActuationResult
 from ec_26_e.cam import CameraFrame
-from ec_26_e.control import (
+from solver2 import (
     MovePlan,
     PlanningOptions,
     PuzzlePiece,

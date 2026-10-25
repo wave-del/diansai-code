@@ -9,7 +9,7 @@ import numpy as np
 from shapely.geometry import Polygon
 
 from ec_26_e.cam import CameraFrame
-from ec_26_e.control import PuzzlePiece
+from solver2 import PuzzlePiece
 from ec_26_e.tasks.task1.contracts import LandscapeRotation
 from ec_26_e.vision import Detect1Result, ResizeResult
 

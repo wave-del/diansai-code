@@ -13,36 +13,36 @@ from types import SimpleNamespace
 import numpy as np
 from shapely.geometry import Polygon
 
-from ec_26_e.control import (
+from solver2 import (
     PlanningOptions,
     PuzzlePiece,
     plan_sheet_moves,
 )
-from ec_26_e.control._engine.generator.random_generator import random_pieces
-from ec_26_e.control._engine.solver.interface_matching import (
+from solver2._engine.generator.random_generator import random_pieces
+from solver2._engine.solver.interface_matching import (
     build_shared_interface_candidates,
 )
-from ec_26_e.control._engine.solver.partition_search import (
+from solver2._engine.solver.partition_search import (
     enumerate_partition_candidates,
 )
-from ec_26_e.control._engine.solver.preprocess import preprocess_piece
-from ec_26_e.control._engine.runtime_config import RuntimeConfig
-from ec_26_e.control._engine.solver.observation_uncertainty import (
+from solver2._engine.solver.preprocess import preprocess_piece
+from solver2._engine.runtime_config import RuntimeConfig
+from solver2._engine.solver.observation_uncertainty import (
     ObservationUncertaintyProfile,
 )
-from ec_26_e.control._engine.solver.random_clearance import (
+from solver2._engine.solver.random_clearance import (
     plan_random_clearance,
 )
-from ec_26_e.control._engine.solver.random_safety import (
+from solver2._engine.solver.random_safety import (
     RANDOM_TARGET_LONG_SIDE_MAX_MM,
     RANDOM_TARGET_SHORT_SIDE_MAX_MM,
     RandomCandidatePool,
     assess_random_assembly,
 )
-from ec_26_e.control._engine.solver.random_execution_gate import (
+from solver2._engine.solver.random_execution_gate import (
     evaluate_random_execution_gate,
 )
-from ec_26_e.control._engine.solver.search import solve_random
+from solver2._engine.solver.search import solve_random
 
 
 def _public_pieces(generated: list[object]) -> tuple[PuzzlePiece, ...]:

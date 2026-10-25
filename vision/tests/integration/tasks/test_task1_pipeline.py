@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import unittest
 
-from ec_26_e.control import PlanningOptions, plan_sheet_moves
+from solver2 import PlanningOptions, plan_sheet_moves
 from ec_26_e.tasks.task1 import Task1Options, run_task1
 from tests.unit.control.test_planner import FIXED_PIECES
 from tests.unit.tasks.task1_helpers import (

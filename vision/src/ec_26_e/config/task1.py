@@ -13,7 +13,7 @@ from ec_26_e.actuation import ActuationConfig, MagnetConfig
 from ec_26_e.cam import CameraConfig
 from ec_26_e.config.env import load_env_file
 from ec_26_e.config.runtime import DEFAULT_ENV_PATH
-from ec_26_e.control import PlanningOptions
+from solver2 import PlanningOptions
 from ec_26_e.motion import FocRotationConfig, MotionSerialConfig
 from ec_26_e.tasks.task1 import Task1Options
 from ec_26_e.vision import Detect1Config, ResizeConfig

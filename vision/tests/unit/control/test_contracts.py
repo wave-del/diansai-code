@@ -12,8 +12,8 @@ import math
 import unittest
 from typing import get_type_hints
 
-import ec_26_e.control as public_control
-from ec_26_e.control import (
+import solver2 as public_control
+from solver2 import (
     MovePlan,
     PlannedMove,
     PlanningError,

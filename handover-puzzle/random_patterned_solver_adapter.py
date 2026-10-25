@@ -12,8 +12,8 @@ import numpy as np
 from shapely.geometry import Polygon
 
 from random_white_solver_adapter import _solve_reference
-from ec_26_e.control import PuzzlePiece
-from ec_26_e.control._engine.transforms import rotation_matrix
+from solver2 import PuzzlePiece
+from solver2._engine.transforms import rotation_matrix
 from solver.core.models import Candidate, PuzzlePiece as TexturePiece
 from solver.core.texture import SceneTextureRanker
 

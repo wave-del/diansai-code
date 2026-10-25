@@ -24,7 +24,7 @@ from ec_26_e.actuation.contracts import (
     NoReplyTransport,
     RotationAxis,
 )
-from ec_26_e.control import MovePlan
+from solver2 import MovePlan
 from ec_26_e.motion import (
     FocRotationAxis,
     MksAxisController,

@@ -14,7 +14,7 @@ for path in (HERE, REFERENCE_SRC):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
-from ec_26_e.control import MovePlan, PlannedMove
+from solver2 import MovePlan, PlannedMove
 from task1_adapter import (
     F32CRotationCalibration,
     TangramAdapterConfig,

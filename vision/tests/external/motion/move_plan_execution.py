@@ -44,7 +44,7 @@ from ec_26_e.motion import (
     SerialWriteEvent,
     Servo42CSerial,
 )
-from ec_26_e.control import MovePlan, PlannedMove
+from solver2 import MovePlan, PlannedMove
 from ec_26_e.tasks.task1.actuation import MovePlanActuator
 from tests.external.motion.helpers import (
     SerialWriteEventReporter,

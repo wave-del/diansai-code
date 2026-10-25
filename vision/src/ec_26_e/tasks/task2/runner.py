@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from ec_26_e.cam import CameraSource
-from ec_26_e.control import MovePlan, plan_sheet_moves
+from solver2 import MovePlan, plan_sheet_moves
 from ec_26_e.tasks.task1.contracts import (
     Detect1Processor,
     PuzzlePlanner,

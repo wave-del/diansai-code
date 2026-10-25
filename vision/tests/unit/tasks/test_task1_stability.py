@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import unittest
 
-from ec_26_e.control import PlanningOptions, PuzzlePiece
+from solver2 import PlanningOptions, PuzzlePiece
 from ec_26_e.tasks.task1 import Task1Options
 from ec_26_e.tasks.task1.review import ReviewedFrame
 from ec_26_e.tasks.task1.stability import StableSceneReviewer

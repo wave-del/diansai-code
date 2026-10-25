@@ -1,4 +1,4 @@
-"""使用从 fpga-code 迁入的几何引擎生成随机拼图和完整取放计划。"""
+"""调用唯一维护的 solver2 几何引擎生成随机拼图和完整取放计划。"""
 
 from __future__ import annotations
 
@@ -13,13 +13,13 @@ import numpy as np
 
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
-for source in (PROJECT_DIR, PROJECT_DIR / "vision" / "src"):
-    if str(source) not in sys.path:
-        sys.path.insert(0, str(source))
+if str(PROJECT_DIR) in sys.path:
+    sys.path.remove(str(PROJECT_DIR))
+sys.path.insert(0, str(PROJECT_DIR))
 
-from ec_26_e.control import PlanningError, PlanningOptions, PuzzlePiece  # noqa: E402
-from ec_26_e.control.planner import _validate_public_input  # noqa: E402
-from ec_26_e.control._engine.solver.solve import solve_observations  # noqa: E402
+from solver2 import PlanningError, PlanningOptions, PuzzlePiece  # noqa: E402
+from solver2.planner import _validate_public_input  # noqa: E402
+from solver2._engine.solver.solve import solve_observations  # noqa: E402
 
 
 FINALIZATION_RESERVE_SECONDS = 2.5
@@ -96,11 +96,13 @@ def _solve_reference(
             },
         )
     finally:
-        logger = logging.getLogger("ec_26_e.control")
+        logger = logging.getLogger("solver2")
         for handler in logger.handlers[:]:
             logger.removeHandler(handler)
             handler.close()
     result["solver_backend"] = "directed_edge_chain_reference"
+    result["solver_package"] = "solver2"
+    result["solver_package_path"] = str(Path(sys.modules["solver2"].__file__).resolve().parent)
     result["minimum_piece_edge_mm"] = minimum_piece_edge_mm
     (output_dir / "solution.json").write_text(
         json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

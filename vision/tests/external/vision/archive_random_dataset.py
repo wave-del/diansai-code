@@ -30,8 +30,8 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from ec_26_e.cam import CameraConfig, FFmpegCamera
 from ec_26_e.config import load_task2_config
-from ec_26_e.control import PlanningError, PlanningOptions, PuzzlePiece
-from ec_26_e.control import plan_sheet_moves
+from solver2 import PlanningError, PlanningOptions, PuzzlePiece
+from solver2 import plan_sheet_moves
 from ec_26_e.tasks.task1.review import ReviewedFrame, review_visual_frame
 from ec_26_e.vision import Detect1Result, Resize, create_production_detector
 from ec_26_e.vision.drawing import draw_vision_detection

@@ -1,0 +1,378 @@
+{
+  "passed": true,
+  "tested": 46,
+  "successful": 46,
+  "original_runtime_imports_blocked": true,
+  "public_api_smoke_passed": true,
+  "imported_standalone_modules": 71,
+  "cases": [
+    {
+      "id": "base/concave/n2/s001",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999837,
+      "independent_seams": 2,
+      "min_gap_mm": 4.961088646025103,
+      "max_gap_mm": 5.065672758389635
+    },
+    {
+      "id": "base/concave/n3/s001",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999958,
+      "independent_seams": 3,
+      "min_gap_mm": 4.721821719418153,
+      "max_gap_mm": 5.2787391068243625
+    },
+    {
+      "id": "base/concave/n4/s001",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999831,
+      "independent_seams": 4,
+      "min_gap_mm": 4.625525774989015,
+      "max_gap_mm": 5.256458281821051
+    },
+    {
+      "id": "base/concave/n2/s023",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000022,
+      "independent_seams": 2,
+      "min_gap_mm": 4.930325443795812,
+      "max_gap_mm": 5.052782167734186
+    },
+    {
+      "id": "base/concave/n3/s023",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999974,
+      "independent_seams": 3,
+      "min_gap_mm": 4.70423960722974,
+      "max_gap_mm": 5.254697460112892
+    },
+    {
+      "id": "base/concave/n4/s023",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000018,
+      "independent_seams": 4,
+      "min_gap_mm": 4.712717692714482,
+      "max_gap_mm": 5.293391434542813
+    },
+    {
+      "id": "base/concave/n2/s027",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999999,
+      "independent_seams": 2,
+      "min_gap_mm": 4.959530160006538,
+      "max_gap_mm": 5.079038407058499
+    },
+    {
+      "id": "base/concave/n3/s027",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999659,
+      "independent_seams": 3,
+      "min_gap_mm": 4.652987803189202,
+      "max_gap_mm": 5.131905095578201
+    },
+    {
+      "id": "base/concave/n4/s027",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999959,
+      "independent_seams": 4,
+      "min_gap_mm": 4.675661863783099,
+      "max_gap_mm": 5.244776600789189
+    },
+    {
+      "id": "base/concave/n2/s030",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999971,
+      "independent_seams": 2,
+      "min_gap_mm": 4.971708103584327,
+      "max_gap_mm": 5.076820473795175
+    },
+    {
+      "id": "base/concave/n3/s030",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999979,
+      "independent_seams": 3,
+      "min_gap_mm": 4.6449573799493455,
+      "max_gap_mm": 5.118297373055249
+    },
+    {
+      "id": "base/concave/n4/s030",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999805,
+      "independent_seams": 4,
+      "min_gap_mm": 4.682691645866366,
+      "max_gap_mm": 5.3659157071291155
+    },
+    {
+      "id": "base/concave/n2/s034",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999932,
+      "independent_seams": 2,
+      "min_gap_mm": 4.936737507829897,
+      "max_gap_mm": 5.074281830230464
+    },
+    {
+      "id": "base/concave/n2/s037",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999984,
+      "independent_seams": 2,
+      "min_gap_mm": 4.968863464069543,
+      "max_gap_mm": 5.0631396533186175
+    },
+    {
+      "id": "base/concave/n3/s037",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000118,
+      "independent_seams": 3,
+      "min_gap_mm": 4.6905592081733785,
+      "max_gap_mm": 5.275158669270479
+    },
+    {
+      "id": "base/concave/n4/s037",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999971,
+      "independent_seams": 4,
+      "min_gap_mm": 4.665027783488568,
+      "max_gap_mm": 5.369586000373602
+    },
+    {
+      "id": "base/concave/n2/s054",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999941,
+      "independent_seams": 2,
+      "min_gap_mm": 4.967766688277128,
+      "max_gap_mm": 5.069117117130694
+    },
+    {
+      "id": "base/concave/n3/s054",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999971,
+      "independent_seams": 3,
+      "min_gap_mm": 4.623706306986461,
+      "max_gap_mm": 5.133336975415239
+    },
+    {
+      "id": "base/concave/n4/s054",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000004,
+      "independent_seams": 4,
+      "min_gap_mm": 4.6673010607382075,
+      "max_gap_mm": 5.428662819356719
+    },
+    {
+      "id": "base/concave/n2/s063",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999997,
+      "independent_seams": 2,
+      "min_gap_mm": 4.927872628985563,
+      "max_gap_mm": 5.054736749729134
+    },
+    {
+      "id": "base/concave/n3/s063",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000113,
+      "independent_seams": 3,
+      "min_gap_mm": 4.68668631578777,
+      "max_gap_mm": 5.215890738966394
+    },
+    {
+      "id": "base/concave/n4/s063",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999946,
+      "independent_seams": 4,
+      "min_gap_mm": 4.7002384518764435,
+      "max_gap_mm": 5.265282397456844
+    },
+    {
+      "id": "base/concave/n2/s095",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999978,
+      "independent_seams": 2,
+      "min_gap_mm": 4.920964936588693,
+      "max_gap_mm": 5.059440192236793
+    },
+    {
+      "id": "base/concave/n3/s095",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999972,
+      "independent_seams": 3,
+      "min_gap_mm": 4.6160440324499,
+      "max_gap_mm": 5.237865609930393
+    },
+    {
+      "id": "base/concave/n4/s095",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999801,
+      "independent_seams": 4,
+      "min_gap_mm": 4.743911222353885,
+      "max_gap_mm": 5.327480414730237
+    },
+    {
+      "id": "base/concave/n2/s098",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000009,
+      "independent_seams": 2,
+      "min_gap_mm": 4.936167920622152,
+      "max_gap_mm": 5.037022811535167
+    },
+    {
+      "id": "base/concave/n3/s098",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000007,
+      "independent_seams": 3,
+      "min_gap_mm": 4.682591238071863,
+      "max_gap_mm": 5.187752116449104
+    },
+    {
+      "id": "base/concave/n4/s098",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999934,
+      "independent_seams": 4,
+      "min_gap_mm": 4.716561407554243,
+      "max_gap_mm": 5.35322983211545
+    },
+    {
+      "id": "mixed/n2/s018",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000022,
+      "independent_seams": 2,
+      "min_gap_mm": 4.90639148290545,
+      "max_gap_mm": 5.068598218264336
+    },
+    {
+      "id": "mixed/n2/s020",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000333,
+      "independent_seams": 2,
+      "min_gap_mm": 4.963316712519304,
+      "max_gap_mm": 5.077070652135441
+    },
+    {
+      "id": "mixed/n2/s026",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000142,
+      "independent_seams": 2,
+      "min_gap_mm": 4.989972668314303,
+      "max_gap_mm": 5.087946417356442
+    },
+    {
+      "id": "mixed/n3/s020",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999989,
+      "independent_seams": 3,
+      "min_gap_mm": 4.652475994541715,
+      "max_gap_mm": 5.1627358978811
+    },
+    {
+      "id": "mixed/n4/s018",
+      "passed": true,
+      "independent_fill_ratio": 0.999999999999982,
+      "independent_seams": 4,
+      "min_gap_mm": 4.722772217103046,
+      "max_gap_mm": 5.325076053604117
+    },
+    {
+      "id": "mixed/n4/s020",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999967,
+      "independent_seams": 4,
+      "min_gap_mm": 4.6470238774591035,
+      "max_gap_mm": 5.218233955545389
+    },
+    {
+      "id": "catalog/concave/n2/s802",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999875,
+      "independent_seams": 2,
+      "min_gap_mm": 4.945598324284097,
+      "max_gap_mm": 5.062647174817793
+    },
+    {
+      "id": "dimensions/concave/n2/s001/90x50",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999994,
+      "independent_seams": 2,
+      "min_gap_mm": 5.0036144673967815,
+      "max_gap_mm": 5.082733578865559
+    },
+    {
+      "id": "dimensions/concave/n2/s001/90x90",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999367,
+      "independent_seams": 2,
+      "min_gap_mm": 4.80981108932934,
+      "max_gap_mm": 5.23664601594711
+    },
+    {
+      "id": "dimensions/concave/n2/s001/120x90",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000093,
+      "independent_seams": 2,
+      "min_gap_mm": 4.915370410333561,
+      "max_gap_mm": 5.1230677547479875
+    },
+    {
+      "id": "dimensions/concave/n3/s001/90x50",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999901,
+      "independent_seams": 3,
+      "min_gap_mm": 4.628909872098603,
+      "max_gap_mm": 5.207684922073908
+    },
+    {
+      "id": "dimensions/concave/n3/s001/90x90",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999954,
+      "independent_seams": 3,
+      "min_gap_mm": 4.817729373083455,
+      "max_gap_mm": 5.28919657622571
+    },
+    {
+      "id": "dimensions/concave/n3/s001/120x90",
+      "passed": true,
+      "independent_fill_ratio": 0.999999999999998,
+      "independent_seams": 3,
+      "min_gap_mm": 4.775641607623621,
+      "max_gap_mm": 5.257063488361271
+    },
+    {
+      "id": "dimensions/concave/n4/s001/90x50",
+      "passed": true,
+      "independent_fill_ratio": 1.0000000000000009,
+      "independent_seams": 4,
+      "min_gap_mm": 4.644541860749848,
+      "max_gap_mm": 5.317355788163784
+    },
+    {
+      "id": "dimensions/concave/n4/s001/90x90",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999973,
+      "independent_seams": 4,
+      "min_gap_mm": 4.848048066346158,
+      "max_gap_mm": 5.248210250094321
+    },
+    {
+      "id": "dimensions/concave/n4/s001/120x90",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999761,
+      "independent_seams": 4,
+      "min_gap_mm": 4.767579991064039,
+      "max_gap_mm": 5.24415105569525
+    },
+    {
+      "id": "numbering/concave/reverse",
+      "passed": true,
+      "independent_fill_ratio": 0.999999999999998,
+      "independent_seams": 4,
+      "min_gap_mm": 4.665027783488535,
+      "max_gap_mm": 5.369586000373586
+    },
+    {
+      "id": "numbering/concave/cycle",
+      "passed": true,
+      "independent_fill_ratio": 0.9999999999999971,
+      "independent_seams": 4,
+      "min_gap_mm": 4.6650277834885525,
+      "max_gap_mm": 5.369586000373602
+    }
+  ]
+}

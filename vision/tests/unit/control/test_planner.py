@@ -16,19 +16,19 @@ import unittest
 import numpy as np
 from shapely.geometry import Polygon
 
-from ec_26_e.control import (
+from solver2 import (
     PlanningError,
     PlanningOptions,
     PuzzlePiece,
     plan_sheet_moves,
 )
-from ec_26_e.control._engine.solver.interface_matching import (
+from solver2._engine.solver.interface_matching import (
     build_shared_interface_candidates,
 )
-from ec_26_e.control._engine.solver.observation_uncertainty import (
+from solver2._engine.solver.observation_uncertainty import (
     ObservationUncertaintyProfile,
 )
-from ec_26_e.control._engine.solver.preprocess import preprocess_piece
+from solver2._engine.solver.preprocess import preprocess_piece
 
 
 FIXED_PIECES = (

@@ -3,11 +3,11 @@ import json
 from pathlib import Path
 import numpy as np
 import pytest
-from ec_26_e.control.acceleration import CpuRigidFitBackend, RigidFitRequest
-from ec_26_e.control._engine.solver.fixed_template_solver import solve_fixed
-from ec_26_e.control._engine.solver.preprocess import preprocess_observations
-from ec_26_e.control._engine.solver.robust_pose import weighted_kabsch
-from ec_26_e.control._engine.transforms import estimate_rigid, transform_points
+from solver2.acceleration import CpuRigidFitBackend, RigidFitRequest
+from solver2._engine.solver.fixed_template_solver import solve_fixed
+from solver2._engine.solver.preprocess import preprocess_observations
+from solver2._engine.solver.robust_pose import weighted_kabsch
+from solver2._engine.transforms import estimate_rigid, transform_points
 
 
 @pytest.mark.parametrize('angle', [-180., -179.999, 0., 179.999])

@@ -10,7 +10,7 @@ import numpy as np
 from numpy.typing import NDArray
 from scipy.optimize import linear_sum_assignment
 
-from ec_26_e.control import PuzzlePiece
+from solver2 import PuzzlePiece
 from ec_26_e.tasks.task1.contracts import Task1Options
 from ec_26_e.tasks.task1.review import ReviewedFrame
 

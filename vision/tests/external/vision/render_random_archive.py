@@ -26,7 +26,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from ec_26_e.control._engine.solver.solve import solve_observations
+from solver2._engine.solver.solve import solve_observations
 
 
 ARCHIVE_SCHEMA_VERSION = "1.0"
@@ -461,7 +461,7 @@ def render_archive_frame(
             },
         )
     finally:
-        logger = logging.getLogger("ec_26_e.control")
+        logger = logging.getLogger("solver2")
         for handler in logger.handlers[:]:
             logger.removeHandler(handler)
             handler.close()

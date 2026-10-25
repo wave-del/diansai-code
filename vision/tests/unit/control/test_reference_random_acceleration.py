@@ -1,9 +1,9 @@
 """Public random backend propagation, failures, numerical contracts and contest rules."""
 import numpy as np
 import pytest
-from ec_26_e.control import PlanningOptions, PuzzlePiece, PlanningError, plan_sheet_moves
-from ec_26_e.control.acceleration import CpuRigidFitBackend
-from ec_26_e.control._engine.generator.random_generator import random_pieces
+from solver2 import PlanningOptions, PuzzlePiece, PlanningError, plan_sheet_moves
+from solver2.acceleration import CpuRigidFitBackend
+from solver2._engine.generator.random_generator import random_pieces
 
 
 class RecordingBackend(CpuRigidFitBackend):
@@ -54,9 +54,9 @@ def test_contest_short_edges_rejected_before_backend_access():
 
 
 def test_competition_dimensions_and_whole_outer_edge():
-    from ec_26_e.control._engine.runtime_config import RuntimeConfig
-    from ec_26_e.control._engine.solver.random_safety import assess_random_assembly
-    from ec_26_e.control._engine.solver.observation_uncertainty import ObservationUncertaintyProfile
+    from solver2._engine.runtime_config import RuntimeConfig
+    from solver2._engine.solver.random_safety import assess_random_assembly
+    from solver2._engine.solver.observation_uncertainty import ObservationUncertaintyProfile
     profile = ObservationUncertaintyProfile(1.0, None, None, None, None, 'test', 'high', False)
     config = RuntimeConfig(random_competition_rules=True)
     # Old compatibility mode allowed up to 130 mm; contest mode rejects 128 mm.
@@ -68,9 +68,9 @@ def test_competition_dimensions_and_whole_outer_edge():
 
 
 def test_relaxed_short_edge_threshold_also_applies_to_whole_outer_edge():
-    from ec_26_e.control._engine.runtime_config import RuntimeConfig
-    from ec_26_e.control._engine.solver.random_safety import assess_random_assembly
-    from ec_26_e.control._engine.solver.observation_uncertainty import ObservationUncertaintyProfile
+    from solver2._engine.runtime_config import RuntimeConfig
+    from solver2._engine.solver.random_safety import assess_random_assembly
+    from solver2._engine.solver.observation_uncertainty import ObservationUncertaintyProfile
     profile=ObservationUncertaintyProfile(1.0,None,None,None,None,'test','high',False)
     # A 10 mm corner triangle and the remaining pentagon exactly fill 100 x 60.
     geometry={'corner':np.array([[0,0],[10,0],[0,10]],float),
@@ -91,8 +91,8 @@ def test_relaxed_short_edge_threshold_also_applies_to_whole_outer_edge():
 ])
 def test_candidate_early_stop_requires_complete_shape_solution(surface, safe, executable, expected):
     from types import SimpleNamespace
-    from ec_26_e.control._engine.runtime_config import RuntimeConfig
-    from ec_26_e.control._engine.solver.recovery import RecoveryCoordinator
+    from solver2._engine.runtime_config import RuntimeConfig
+    from solver2._engine.solver.recovery import RecoveryCoordinator
     coordinator = RecoveryCoordinator(0.0, RuntimeConfig(), surface_mode=surface,
                                       monotonic_fn=lambda: 0.0)
     coordinator.incumbent = SimpleNamespace(safe=safe, machine_executable=executable)
@@ -100,7 +100,7 @@ def test_candidate_early_stop_requires_complete_shape_solution(surface, safe, ex
 
 
 def test_four_piece_search_uses_geometry_quality_over_float_tie_noise():
-    from ec_26_e.control._engine.solver.four_piece_topology import _stable_partial_rank
+    from solver2._engine.solver.four_piece_topology import _stable_partial_rank
     good = (1e-8, .05, 2.)
     bad = (-1e-8, .30, 1.)
     assert _stable_partial_rank(good) < _stable_partial_rank(bad)
@@ -109,8 +109,8 @@ def test_four_piece_search_uses_geometry_quality_over_float_tie_noise():
 
 def test_fully_valid_candidate_outranks_a_better_scoring_diagnostic_candidate():
     from types import SimpleNamespace
-    from ec_26_e.control._engine.runtime_config import RuntimeConfig
-    from ec_26_e.control._engine.solver.recovery import RecoveryCoordinator
+    from solver2._engine.runtime_config import RuntimeConfig
+    from solver2._engine.solver.recovery import RecoveryCoordinator
     coordinator = RecoveryCoordinator(0.0, RuntimeConfig(), monotonic_fn=lambda: 0.0)
     diagnostic = SimpleNamespace(candidate_id='a', variant_id='raw', safe=False,
                                  machine_executable=True, quality_key=(0.,))

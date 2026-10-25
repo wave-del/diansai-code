@@ -7,7 +7,7 @@ from collections.abc import Callable, Sequence
 import numpy as np
 
 from ec_26_e.cam import CameraFrame, CameraTimeoutError
-from ec_26_e.control import MovePlan, PlanningOptions, PuzzlePiece
+from solver2 import MovePlan, PlanningOptions, PuzzlePiece
 from ec_26_e.vision import (
     Detect1Result,
     PieceDetection,

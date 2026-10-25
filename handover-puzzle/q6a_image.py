@@ -97,7 +97,7 @@ def main(argv=None):
                     d=detector.last_diagnostics
                     if d.refined_count!=d.yolo_count-d.contained_duplicate_count:
                         raise ValueError('部分 NPU 实例未通过几何精修，拒绝对缺片结果求解')
-                    from ec_26_e.control import PuzzlePiece
+                    from solver2 import PuzzlePiece
                     from task1_yolo_flow import _portrait_vertices
                     from random_white_solver_adapter import solve_random_white
                     observed=tuple(PuzzlePiece(str(i),_portrait_vertices(tuple(p.corners_relative),'clockwise',207,292))

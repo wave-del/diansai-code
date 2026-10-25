@@ -11,7 +11,7 @@ import unittest
 
 import ec_26_e.tasks as public_tasks
 import ec_26_e.tasks.task1 as public_task1
-from ec_26_e.control import PlanningOptions
+from solver2 import PlanningOptions
 from ec_26_e.tasks import TaskCancelledError, TaskContext
 from ec_26_e.tasks.task1 import Task1Options
 from ec_26_e.tasks.task1.review import review_visual_frame

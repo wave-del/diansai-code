@@ -11,7 +11,7 @@ from ec_26_e.cam import (
     FFmpegCamera,
 )
 from ec_26_e.config import Task1Config
-from ec_26_e.control import PlanningError, plan_sheet_moves
+from solver2 import PlanningError, plan_sheet_moves
 from ec_26_e.draw import Task1DrawObserver
 from ec_26_e.tasks.contracts import TaskCancelledError, TaskContext
 from ec_26_e.tasks.detection import close_detector

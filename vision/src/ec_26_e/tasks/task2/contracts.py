@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from ec_26_e.control import PlanningOptions
+from solver2 import PlanningOptions
 from ec_26_e.tasks.task1.contracts import (
     Task1Error,
     Task1Options,

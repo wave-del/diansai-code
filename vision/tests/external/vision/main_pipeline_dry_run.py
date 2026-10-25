@@ -22,7 +22,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from ec_26_e.config import load_task1_config
-from ec_26_e.control import MovePlan, PlanningOptions, PuzzlePiece
+from solver2 import MovePlan, PlanningOptions, PuzzlePiece
 from ec_26_e.tasks import TaskContext
 from ec_26_e.tasks.task1.application import execute_task1
 from ec_26_e.vision import (

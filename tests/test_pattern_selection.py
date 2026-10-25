@@ -12,12 +12,12 @@ sys.path[:0]=[str(ROOT/'vision/src'),str(ROOT)]
 
 from solver.core.models import Candidate, PuzzlePiece
 from solver.core.texture import SceneTextureRanker
-from ec_26_e.control._engine.appearance.variant_pool import same_assembly,distinct_safe_variants
-from ec_26_e.control._engine.runtime_config import RuntimeConfig
-from ec_26_e.control._engine.solver.recovery import RecoveryCoordinator
-from ec_26_e.control._engine.solver.corner_hypotheses import rectangle_corner_candidates
-from ec_26_e.control._engine.solver.preprocess import preprocess_observations
-from ec_26_e.control._engine.transforms import transform_points
+from solver2._engine.appearance.variant_pool import same_assembly,distinct_safe_variants
+from solver2._engine.runtime_config import RuntimeConfig
+from solver2._engine.solver.recovery import RecoveryCoordinator
+from solver2._engine.solver.corner_hypotheses import rectangle_corner_candidates
+from solver2._engine.solver.preprocess import preprocess_observations
+from solver2._engine.transforms import transform_points
 
 FIXTURES=ROOT/'vision/tests/fixtures'
 

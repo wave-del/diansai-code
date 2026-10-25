@@ -1,0 +1,27 @@
+{
+  "revision": "round-3-fix-1",
+  "algorithm_files_compared": 102,
+  "mapped_file_hashes_verified": 128,
+  "generated_file_hashes_verified": 2,
+  "python_files_syntax_checked": 119,
+  "tests": {
+    "passed": 110,
+    "subtests_passed": 9,
+    "failed": 2,
+    "new_failures": 0,
+    "existing_fixed_template_failures": [
+      "test_fixed_plan_is_complete_and_on_lower_half",
+      "test_fixed_plan_uses_gapped_non_overlapping_final_layout"
+    ],
+    "baseline_comparison": "当前vision算法同名两项也失败；宽度111.83105462640475mm，最小间隙4.148604454382078mm"
+  },
+  "isolated_replay": {
+    "passed": true,
+    "tested": 46,
+    "successful": 46,
+    "original_runtime_imports_blocked": true,
+    "public_api_smoke_passed": true,
+    "imported_standalone_modules": 71
+  },
+  "logs": "/mnt/nvme/initial-code/npu_q6a_test/web-random-test/solver2-update-20261025"
+}

@@ -6,9 +6,9 @@ import json
 import numpy as np
 from scipy.optimize import least_squares
 
-from ec_26_e.control._engine.solver import fixed_template_solver, robust_pose
-from ec_26_e.control._engine.solver.preprocess import preprocess_observations
-from ec_26_e.control._engine.transforms import estimate_rigid, transform_points
+from solver2._engine.solver import fixed_template_solver, robust_pose
+from solver2._engine.solver.preprocess import preprocess_observations
+from solver2._engine.transforms import estimate_rigid, transform_points
 
 
 def test_cached_pairs_match_uncached_candidates_and_do_not_survive_a_solve():

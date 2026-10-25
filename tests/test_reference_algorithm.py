@@ -13,8 +13,8 @@ from shapely.geometry import Polygon
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "vision/src"), str(ROOT / "handover-puzzle"), str(ROOT)]
 
-from ec_26_e.control import PlanningError, PlanningOptions, PuzzlePiece
-from ec_26_e.control._engine.transforms import transform_points
+from solver2 import PlanningError, PlanningOptions, PuzzlePiece
+from solver2._engine.transforms import transform_points
 from random_white_solver_adapter import solve_random_white
 import random_patterned_solver_adapter as patterned
 from task1_yolo_flow import _plan_with_artifacts
@@ -181,8 +181,8 @@ def test_real_blank_scene_does_not_claim_pattern_alignment(tmp_path):
 
 
 def test_pattern_selector_excludes_geometry_rejected_variants(monkeypatch):
-    from ec_26_e.control._engine.appearance import policy
-    from ec_26_e.control._engine.runtime_config import RuntimeConfig
+    from solver2._engine.appearance import policy
+    from solver2._engine.runtime_config import RuntimeConfig
 
     accepted = SimpleNamespace(safe=True, machine_executable=True, candidate_id="valid", quality_key=(1,))
     rejected = SimpleNamespace(safe=False, machine_executable=True, candidate_id="invalid", quality_key=(0,))

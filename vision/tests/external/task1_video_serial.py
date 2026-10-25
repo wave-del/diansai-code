@@ -35,7 +35,7 @@ from ec_26_e.motion import (
     DEFAULT_MOTION_REPLY_TIMEOUT_SECONDS,
     DEFAULT_MOTION_WRITE_TIMEOUT_SECONDS,
 )
-from ec_26_e.control import MovePlan
+from solver2 import MovePlan
 from ec_26_e.tasks import TaskContext
 from ec_26_e.tasks.task1.application import execute_task1
 from tests.external.motion.helpers import create_serial_config, emit_summary

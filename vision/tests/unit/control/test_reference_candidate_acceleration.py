@@ -4,8 +4,8 @@ import numpy as np
 import pytest
 from shapely.geometry import Polygon
 
-from ec_26_e.control import plan_sheet_moves, PlanningOptions, PlanningError
-from ec_26_e.control.candidate_acceleration import candidate_acceleration, scan_candidate_distances, cannot_improve
+from solver2 import plan_sheet_moves, PlanningOptions, PlanningError
+from solver2.candidate_acceleration import candidate_acceleration, scan_candidate_distances, cannot_improve
 from .test_reference_random_acceleration import pieces
 
 

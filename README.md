@@ -4,7 +4,7 @@
 > 使用 `./host/start_host.sh` 启动，详见 [Q6A 使用说明](host/Q6A-MIGRATION.md) 与
 > [验证记录](host/Q6A-VALIDATION.md)。板载 NPU 验证单独保存在同级 `../npu_q6a_test/`。
 > Q6A HTP 本地图片后端已接入，见 [NPU 部署与验证](host/Q6A-NPU-DEPLOYMENT.md)。
-> 拼图算法已参考同级 `fpga-code` 更新，正式随机任务使用边链几何引擎；见 [算法更新记录](vision/docs/算法更新记录.md)。
+> 拼图算法统一维护于 [`solver2/`](solver2/README.md)，网页和正式任务使用同一套边链几何引擎；`vision` 内的重复算法已删除。见 [算法更新记录](vision/docs/算法更新记录.md)。
 > 相机与运动尚未验收；下文保留原 A7Z 交接资料，其中硬件映射与旧启动方式不适用于 Q6A。
 
 全国大学生电子设计竞赛 E 题「拼图装置」的实现。用一台市售**写字机**改装的机械平台，
@@ -25,6 +25,7 @@
 │  host/             PySide6 触摸界面・任务调度・完成声光提示  │
 │  handover-puzzle/  视觉采集→稳定→解算→取放流程编排          │
 │  solver/           几何求解器（独立验证台，不碰硬件）        │
+│  solver2/          网页和正式任务共用的拼图几何算法          │
 │  vision/           YOLO11-seg NPU 推理 + A4 透视校正        │
 └──────┬────────────────┬───────────────────┬───────────────┘
        │ USB 串口        │ UART3             │ GPIO
@@ -58,6 +59,7 @@
 | `handover-electromagnet/` | 电磁铁 GPIO 控制 |
 | `handover-button/` `handover-buzzer/` | 实体按键与蜂鸣器 |
 | `solver/` | 拼图解算器实验台（PySide6 GUI，不访问 GPIO/相机/机械臂） |
+| [`solver2/`](solver2/README.md) | 网页与正式任务共用的唯一拼图几何算法，含固定四片、随机 2～4 片、留缝规划及测试 |
 | `vision/` | 视觉模块：A4 透视校正、YOLO 实例分割、边精修（原 `ec-26-e` 工程） |
 | `code/` `example/` `tests/` | 方向标定、运动冒烟测试与联调脚本 |
 

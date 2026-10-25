@@ -29,7 +29,7 @@ from ec_26_e.config.task1 import (
     _resize_from_sources,
     _section,
 )
-from ec_26_e.control import PlanningOptions
+from solver2 import PlanningOptions
 from ec_26_e.tasks.task2 import Task2Options
 from ec_26_e.vision import Detect1Config, ResizeConfig
 from ec_26_e.vision.resize.contracts import (

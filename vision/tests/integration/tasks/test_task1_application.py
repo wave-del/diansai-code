@@ -15,7 +15,7 @@ from unittest.mock import Mock
 
 from ec_26_e.cam import CameraCaptureError
 from ec_26_e.config import load_task1_config
-from ec_26_e.control import PlanningError
+from solver2 import PlanningError
 from ec_26_e.tasks import TaskCancelledError, TaskContext
 from ec_26_e.tasks.task1 import Task1Error
 from ec_26_e.tasks.task1.application import execute_task1

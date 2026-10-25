@@ -18,7 +18,7 @@ from ec_26_e.actuation import (
     MotionLifecycleState,
     compile_move_plan,
 )
-from ec_26_e.control import MovePlan, PlannedMove
+from solver2 import MovePlan, PlannedMove
 from ec_26_e.motion import (
     FocRotationConfig,
     MksXYController,

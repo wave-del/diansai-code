@@ -28,7 +28,7 @@ from ec_26_e.config import (
     load_task1_config,
     load_runtime_config,
 )
-from ec_26_e.control import PlanningOptions
+from solver2 import PlanningOptions
 from ec_26_e.tasks.task1 import Task1Options
 
 

@@ -2,6 +2,7 @@
 
 > Q6A 当前使用 QNN HTP 后端，资源位于项目 `model-lib/q6a/`。
 > 本地图片入口及限制见 [Q6A NPU 部署说明](../host/Q6A-NPU-DEPLOYMENT.md)。
+> 几何求解统一使用同级 [`solver2`](../solver2/README.md)，旧 control 算法已移除；交接脚本会同时打包两个目录。
 > 以下旧交接中的 VIPLite 模型和 A7Z 硬件部署方法不适用于 Q6A。
 
 ## 交接与快速开始
@@ -335,3 +336,10 @@ XY 坐标完全沿用当前 C 接口：`X=0..230 mm`、`Y=0..360 mm` 的绝对
 ```bash
 poetry run python -m unittest discover -s tests/unit/motion -p "test_*.py"
 ```
+# 几何算法入口
+
+本目录保留视觉识别、任务编排和运动适配。拼图几何算法统一由上一级
+[`solver2`](../solver2/README.md) 提供，原 `src/ec_26_e/control` 已删除。
+部署源代码时保留 `diansai-code/vision` 与 `diansai-code/solver2` 的相邻结构；
+从本目录启动正式任务时，`ec_26_e` 会解析同仓库根目录的 `solver2`。
+

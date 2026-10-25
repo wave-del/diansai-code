@@ -6,13 +6,13 @@ from time import perf_counter
 import numpy as np
 import pytest
 
-from ec_26_e.control import PuzzlePiece, PlanningOptions, plan_sheet_moves
-from ec_26_e.control._engine.runtime_config import RuntimeConfig
-from ec_26_e.control._engine.solver import search, partition_search as partition
-from ec_26_e.control._engine.solver.four_piece_topology import _leaf
-from ec_26_e.control._engine.solver.output_quality import rectangle_fill_ratio
-from ec_26_e.control._engine.solver.preprocess import preprocess_observations
-from ec_26_e.control._engine.transforms import estimate_rigid
+from solver2 import PuzzlePiece, PlanningOptions, plan_sheet_moves
+from solver2._engine.runtime_config import RuntimeConfig
+from solver2._engine.solver import search, partition_search as partition
+from solver2._engine.solver.four_piece_topology import _leaf
+from solver2._engine.solver.output_quality import rectangle_fill_ratio
+from solver2._engine.solver.preprocess import preprocess_observations
+from solver2._engine.transforms import estimate_rigid
 
 FIXTURES = Path(__file__).resolve().parents[2] / 'fixtures'
 
@@ -69,7 +69,7 @@ def test_unlimited_search_does_not_honor_an_expired_wall_clock(monkeypatch):
 
 @pytest.mark.parametrize('fill,accepted',[(.94999,False),(.95,True)])
 def test_engine_never_emits_moves_below_the_output_threshold(tmp_path,monkeypatch,fill,accepted):
-    from ec_26_e.control._engine.solver import solve
+    from solver2._engine.solver import solve
     monkeypatch.setattr(solve,'rectangle_fill_ratio',lambda vertices:fill)
     result=solve.solve_observations(
         FIXTURES/'fixed4_reference.json',tmp_path,print_plan=False,

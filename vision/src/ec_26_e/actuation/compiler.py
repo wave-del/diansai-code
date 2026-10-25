@@ -9,7 +9,7 @@ from ec_26_e.actuation.contracts import (
     ActuationValidationError,
     TransferCycle,
 )
-from ec_26_e.control import MovePlan
+from solver2 import MovePlan
 
 
 def _quantize_coordinate(

@@ -11,7 +11,7 @@ import unittest
 from unittest.mock import Mock
 
 from ec_26_e.config import load_task2_config
-from ec_26_e.control import plan_sheet_moves
+from solver2 import plan_sheet_moves
 from ec_26_e.tasks import TaskContext
 from ec_26_e.tasks.task2 import Task2Error
 from ec_26_e.tasks.task2.application import execute_task2

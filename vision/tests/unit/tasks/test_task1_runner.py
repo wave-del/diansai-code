@@ -12,7 +12,7 @@ from tempfile import TemporaryDirectory
 import unittest
 
 from ec_26_e.cam import CameraCaptureError
-from ec_26_e.control import MovePlan, PlanningError
+from solver2 import MovePlan, PlanningError
 from ec_26_e.tasks import TaskCancelledError
 from ec_26_e.tasks.task1 import (
     Task1Options,

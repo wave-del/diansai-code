@@ -23,9 +23,8 @@ import numpy as np
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 A4_ROBUST_DIR = PROJECT_DIR / "tests" / "a4_robust"
-# 项目随系统卡迁移时不能依赖开发机用户名或绝对目录。旧控制工程仍只被
-# 用于稳定的 MovePlan/clearance/执行校验工具，白色随机题的搜索本身改由
-# 相邻 workspace 中的 solver 工程完成。
+# 视觉仍由 vision/src 提供；几何搜索、MovePlan、留缝和执行检查统一使用
+# 项目根目录的 solver2。路径相对本仓库解析，支持整仓迁移。
 COLLEAGUE_SRC = PROJECT_DIR / "vision" / "src"
 REFERENCE_SRC = PROJECT_DIR / "reference-vision" / "ec_26_e" / "src"
 DEFAULT_PLAN_OUTPUT_DIR = PROJECT_DIR / "handover-puzzle" / "outputs" / "task1_plans"
@@ -480,7 +479,7 @@ def _prepare_import_paths() -> None:
     reference_value = str(REFERENCE_SRC)
     while reference_value in sys.path:
         sys.path.remove(reference_value)
-    for path in (A4_ROBUST_DIR, COLLEAGUE_SRC):
+    for path in (PROJECT_DIR, A4_ROBUST_DIR, COLLEAGUE_SRC):
         value = str(path)
         while value in sys.path:
             sys.path.remove(value)
@@ -494,7 +493,7 @@ def _prepare_import_paths() -> None:
 
 
 def _planning_options(raw: dict[str, object]) -> Any:
-    from ec_26_e.control import PlanningOptions
+    from solver2 import PlanningOptions
 
     values = dict(raw)
     start = values.get("start_xy_a4_mm")
@@ -533,11 +532,11 @@ def _plan_with_artifacts(
 ) -> object:
     """运行同事求解器，并在执行门判定前持久化结果图和诊断文件。"""
 
-    from ec_26_e.control import MovePlan, PlanningError, PlanningOptions, PuzzlePiece
-    from ec_26_e.control._engine.evaluation.clearance_compaction_smoke import (
+    from solver2 import MovePlan, PlanningError, PlanningOptions, PuzzlePiece
+    from solver2._engine.evaluation.clearance_compaction_smoke import (
         _render_layout,
     )
-    from ec_26_e.control.planner import _to_move
+    from solver2.planner import _to_move
 
     if not isinstance(options, PlanningOptions):
         raise TypeError("options 必须是 PlanningOptions")
@@ -566,7 +565,7 @@ def _plan_with_artifacts(
     }
     # 随机适配层使用与公开 planner 相同的轮廓和赛题约束。
     if not (options.mode == "random" and (use_new_random_solver or use_patterned_solver)):
-        from ec_26_e.control._engine.solver.preprocess import preprocess_observations
+        from solver2._engine.solver.preprocess import preprocess_observations
 
         preprocess_observations(payload)
     run_name = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
@@ -610,7 +609,7 @@ def _plan_with_artifacts(
                 minimum_execution_confidence=options.minimum_execution_confidence,
             )
         else:
-            from ec_26_e.control._engine.solver.solve import solve_observations
+            from solver2._engine.solver.solve import solve_observations
 
             result = solve_observations(
                 input_path,
@@ -627,7 +626,7 @@ def _plan_with_artifacts(
                 },
             )
     finally:
-        logger = logging.getLogger("ec_26_e.control")
+        logger = logging.getLogger("solver2")
         for handler in logger.handlers[:]:
             logger.removeHandler(handler)
             handler.close()
@@ -687,7 +686,7 @@ def acquire_yolo_move_plan(config: YoloTaskConfig) -> object:
     import cv2
     import test_a4_detection as a4_detection
     import ec_26_e
-    from ec_26_e.control import PuzzlePiece
+    from solver2 import PuzzlePiece
     from run_live_yolo import _draw
     from seed import seed_a4_robust
     from yolo_pipeline import YoloRobustDetector
